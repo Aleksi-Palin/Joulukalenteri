@@ -70,3 +70,29 @@ body {
   animation: sparkle 2s infinite ease-in-out;
   border: 2px solid gold;
 }
+
+.snowflake {
+  position: fixed;
+  top: -26px;
+  color: white;
+  pointer-events: none;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(130vh) translateX(50px) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
+.snowflake:nth-child(odd) {
+  animation-duration: 15s;
+}
+.snowflake:nth-child(even) {
+  animation-duration: 18s;
+}
