@@ -1,0 +1,72 @@
+body {
+  background: linear-gradient(180deg, #004d00 0%, #003300 100%);
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  color: white;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(6, 80px);
+  gap: 15px;
+  list-style: none;
+  padding: 40px;
+  margin: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid #d4af37;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.days li {
+  background: linear-gradient(145deg, #b30000, #ff0000);
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  position: relative;
+}
+
+.days li::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.days li:hover::before {
+  opacity: 1;
+}
+
+.days li:hover {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(145deg, #ff4d4d, #b30000);
+  box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
+}
+
+/* Optional sparkle animation */
+@keyframes sparkle {
+  0%, 100% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 20px #fff; }
+}
+
+.days li:nth-child(24) {
+  background: linear-gradient(145deg, #006600, #009900);
+  animation: sparkle 2s infinite ease-in-out;
+  border: 2px solid gold;
+}
