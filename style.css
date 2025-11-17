@@ -9,6 +9,18 @@ body {
   color: white;
 }
 
+/* Top element centered above the calendar */
+.top-element {
+    position: absolute;
+    top: 15px;               /* Adjust how far above the calendar */
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    
+}
+
 .days {
   display: grid;
   grid-template-columns: repeat(6, 80px);
