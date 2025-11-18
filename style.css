@@ -9,16 +9,14 @@ body {
   color: white;
 }
 
-/* Top element centered above the calendar */
 .top-element {
-    position: absolute;
-    top: 15px;               /* Adjust how far above the calendar */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  color: white;
+  text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  user-select: none;
 }
 
 .days {
@@ -49,6 +47,34 @@ body {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   position: relative;
+  user-select: none;
+  perspective: 800px;
+  margin: 0;
+  padding: 0;
+}
+
+.days li .door {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  transform-origin: left;
+  transition: transform 0.8s ease;
+  background: linear-gradient(145deg, #b30000, #ff0000);
+  border: 2px solid #d4af37;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+}
+
+.days li.opened .door {
+  transform: rotateY(-150deg);
 }
 
 .days li::before {
@@ -71,12 +97,6 @@ body {
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
 }
 
-/* Optional sparkle animation */
-@keyframes sparkle {
-  0%, 100% { box-shadow: 0 0 10px gold; }
-  50% { box-shadow: 0 0 20px #fff; }
-}
-
 .days li:nth-child(24) {
   background: linear-gradient(145deg, #006600, #009900);
   animation: sparkle 2s infinite ease-in-out;
@@ -86,9 +106,14 @@ body {
 .snowflake {
   position: fixed;
   top: -26px;
-  color: white;
   pointer-events: none;
   animation: fall linear infinite;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 20px #fff; }
 }
 
 @keyframes fall {
@@ -107,4 +132,17 @@ body {
 }
 .snowflake:nth-child(even) {
   animation-duration: 18s;
+}
+
+@keyframes openBox {
+  0%   { transform: scale(0.5) rotate(-15deg); opacity: 0; }
+  50%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
+  70%  { transform: scale(0.9) rotate(-5deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.today-open {
+  animation: openBox 0.8s ease forwards;
+  box-shadow: 0 0 25px gold, inset 0 0 15px rgba(255,255,0,0.5);
+  border: 3px solid gold;
 }
