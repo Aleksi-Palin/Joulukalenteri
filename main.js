@@ -57,6 +57,6 @@ document.getElementById("Date").innerHTML = getdate();
 
 checkDate("12.12.2025");
 
-
-const audio = document.getElementById("myAudio");
-audio.play();   // plays the audio
+//korjataan jossain kohtaa
+//const audio = document.getElementById("myAudio");
+//audio.play();   // plays the audio
