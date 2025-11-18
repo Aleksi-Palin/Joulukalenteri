@@ -1,3 +1,5 @@
+
+
 function getdate(){
     let Newdata = new Date();
     let day = Newdata.getDate();
@@ -8,6 +10,15 @@ function getdate(){
 }
 
 function checkDate(UserDate){ // To Check if current date matches with the wanted date (as in clicked item) 
+    let raw = getCookie("doordata");
+    let daysStatus = JSONTodoordata(raw);
+
+    // if doordata is null → create it
+    if (!daysStatus) {
+        daysStatus = JSON.parse(createDoordata());
+        updateCookie(daysStatus);
+    }
+
     const [day,month,year] = UserDate.split('.').map(Number);
 
     //Salli vain jos on joulukuu eli month = 12
@@ -15,11 +26,6 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
         console.log("Ei ole jolukuu, kalenteri suljettu");
     }
 
-    //luodaan lista mihin tallennetaan avatut kalenterit
-    let daysStatus = [];
-    for(let i = 1; i <= 24; i++){
-        daysStatus.push({date: i, opened: 0,disabled: 0}); //status = 0: Ei avattu
-    }
 
     // Update allowed days based on provided date
     document.querySelectorAll('.days li').forEach(li => {
@@ -38,13 +44,14 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
             // Mark as opened
             
             daysStatus[liDay - 1].opened = 1;
-            console.log(daysStatus);
+            updateCookie(daysStatus);
         });
     });
 
-    console.log(daysStatus);
-    console.log("Given date: " + UserDate);
+    updateCookie(daysStatus);
+    
 }
+
 
 document.getElementById("Date").innerHTML = getdate();
 
