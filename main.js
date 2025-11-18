@@ -64,3 +64,7 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
 document.getElementById("Date").innerHTML = getdate();
 
 checkDate("12.12.2025");
+
+//korjataan jossain kohtaa
+//const audio = document.getElementById("myAudio");
+//audio.play();   // plays the audio
