@@ -30,10 +30,17 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
     // Update allowed days based on provided date
     document.querySelectorAll('.days li').forEach(li => {
         const liDay = parseInt(li.dataset.day);
+
+        if (daysStatus[liDay - 1].opened === 1) {
+            li.classList.add("opened");
+        }
         
         if(liDay > day){
             daysStatus[liDay -1].disabled = 1;
             
+        }
+        if (daysStatus[liDay - 1].disabled === 1) {
+            li.classList.add("locked"); // optional CSS usage
         }
         
         li.addEventListener('click', () => {
@@ -44,6 +51,7 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
             // Mark as opened
             
             daysStatus[liDay - 1].opened = 1;
+            li.classList.add("opened");
             updateCookie(daysStatus);
         });
     });
