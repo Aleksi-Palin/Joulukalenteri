@@ -12,13 +12,16 @@ body {
 /* Top element centered above the calendar */
 .top-element {
     position: absolute;
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
     top: 15px;               /* Adjust how far above the calendar */
     left: 50%;
     transform: translateX(-50%);
     color: white;
+    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
     padding: 5px 10px;
     text-align: center;
-    
+    user-select: none; 
 }
 
 .days {
@@ -49,6 +52,7 @@ body {
   cursor: pointer;
   transition: all 0.25s ease-in-out;
   position: relative;
+  user-select: none;
 }
 
 .days li::before {
