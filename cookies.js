@@ -61,13 +61,11 @@ function checkCookie() {
         setCookie("userId", userId, 365);
         //console.log("Uusi eväste luotu:", userId);
     } else {
-        console.log("Eväste löytyi:", userId);
+      console.log("userId cookie:", userId);
+      console.log("doordata (parsed):", JSONTodoordata(status));
     }
 
-    console.log("ALL COOKIES RAW:", document.cookie);
-    console.log("userId cookie:", userId);
-    console.log("doordata (raw):", status);
-    console.log("doordata (parsed):", JSONTodoordata(status));
+    
     
     //console.log("data löytyi:", JSONTodoordata(status));
 }
