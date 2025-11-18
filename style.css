@@ -22,7 +22,8 @@ body {
 .days {
   display: grid;
   grid-template-columns: repeat(6, 80px);
-  gap: 15px;
+  row-gap: 40px;
+  column-gap: 90px;
   list-style: none;
   padding: 40px;
   margin: 0;
@@ -33,7 +34,7 @@ body {
 }
 
 .days li {
-  background: linear-gradient(145deg, #b30000, #ff0000);
+  background: linear-gradient(145deg, #3b1717, #8b2020);
   border: 2px solid #d4af37;
   border-radius: 10px;
   font-size: 1.5rem;
@@ -93,7 +94,7 @@ body {
 
 .days li:hover {
   transform: translateY(-5px) scale(1.05);
-  background: linear-gradient(145deg, #ff4d4d, #b30000);
+  /* background: linear-gradient(145deg, #ff4d4d, #b30000); */
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
 }
 
