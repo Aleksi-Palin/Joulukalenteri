@@ -11,17 +11,15 @@ body {
 
 /* Top element centered above the calendar */
 .top-element {
-    position: absolute;
-    font-family: "Poppins", sans-serif;
-    font-size: 40px;
-    top: 15px;               /* Adjust how far above the calendar */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
-    padding: 5px 10px;
-    text-align: center;
-    user-select: none; 
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 40px;
+  /* left: 50%; */
+  /* transform: translateX(-50%); */
+  color: white;
+  text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  user-select: none;
 }
 
 .days {
@@ -75,12 +73,6 @@ body {
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
 }
 
-/* Optional sparkle animation */
-@keyframes sparkle {
-  0%, 100% { box-shadow: 0 0 10px gold; }
-  50% { box-shadow: 0 0 20px #fff; }
-}
-
 .days li:nth-child(24) {
   background: linear-gradient(145deg, #006600, #009900);
   animation: sparkle 2s infinite ease-in-out;
@@ -90,9 +82,15 @@ body {
 .snowflake {
   position: fixed;
   top: -26px;
-  color: white;
+  color: rgb(255, 255, 255);
   pointer-events: none;
   animation: fall linear infinite;
+  z-index: 1;
+}
+
+@keyframes sparkle {
+  0%, 100% { box-shadow: 0 0 10px gold; }
+  50% { box-shadow: 0 0 20px #fff; }
 }
 
 @keyframes fall {
