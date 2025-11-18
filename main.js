@@ -44,6 +44,7 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
             // Mark as opened
             
             daysStatus[liDay - 1].opened = 1;
+            li.classList.add("opened");
             updateCookie(daysStatus);
         });
     });
