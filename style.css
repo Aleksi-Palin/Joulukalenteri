@@ -146,3 +146,32 @@ body {
   box-shadow: 0 0 25px gold, inset 0 0 15px rgba(255,255,0,0.5);
   border: 3px solid gold;
 }
+
+.play-btn {
+    background: linear-gradient(135deg, #c62828, #8e0000);
+    color: white;
+    border: 3px solid #ffffffaa;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-family: 'Comic Sans MS', sans-serif;
+    border-radius: 12px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.5),
+                0 0 6px rgba(255, 255, 255, 0.6) inset;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.play-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8),
+                0 0 12px rgba(0, 200, 0, 0.6);
+}
+
+.play-btn:active {
+    transform: scale(0.97);
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+}
+
+.play-btn::after {
+    content: " 🎄";
+}
