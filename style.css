@@ -71,6 +71,9 @@ body {
 .days li.opened .door {
   transform: rotateY(-150deg);
 }
+.days li.locked .door {
+  transform: rotateY(0deg);
+}
 
 /* .days li::before {
   content: "";
