@@ -57,8 +57,35 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
     });
 
     updateCookie(daysStatus);
+
+ 
+
     
 }
+ let file = document.getElementById("myAudio");
+  const sound = new Audio("musiik.mp3");
+
+  function playSound() {
+    sound.play();
+  }
+  window.addEventListener("DOMContentLoaded", () => {
+
+    const audio = document.getElementById("myAudio");
+    const volumeSlider = document.getElementById("volume");
+
+    function playSound() {
+        audio.play();
+    }
+
+    // Make playSound available globally (button needs it)
+    window.playSound = playSound;
+
+    // Volume slider
+    volumeSlider.addEventListener("input", function () {
+        audio.volume = this.value;
+    });
+
+});
 
 
 document.getElementById("Date").innerHTML = getdate();
