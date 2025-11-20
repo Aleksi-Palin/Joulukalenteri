@@ -3,7 +3,7 @@ body {
   font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   min-height: 100vh;
   margin: 0;
   color: white;
@@ -11,9 +11,9 @@ body {
 
 .top-element {
   justify-content: center;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   font-size: 40px;
-  color: white;
+  /* color: white; */
   text-shadow: 2px 5px 10px rgba(0, 0, 0, 0.6);
   text-align: center;
   user-select: none;
@@ -22,10 +22,11 @@ body {
 .days {
   display: grid;
   grid-template-columns: repeat(6, 80px);
-  gap: 15px;
-  list-style: none;
+  row-gap: 40px;
+  column-gap: 90px;
+  /* list-style: none; */
   padding: 40px;
-  margin: 0;
+  /* margin: 0; */
   background: rgba(255, 255, 255, 0.1);
   border: 3px solid #d4af37;
   border-radius: 20px;
@@ -33,33 +34,28 @@ body {
 }
 
 .days li {
-  background: linear-gradient(145deg, #b30000, #ff0000);
+  background: linear-gradient(145deg, #3b1717, #8b2020);
   border: 2px solid #d4af37;
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: bold;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   height: 80px;
   width: 80px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
   cursor: pointer;
   transition: all 0.25s ease-in-out;
-  position: relative;
+  /* position: relative; */
   user-select: none;
   perspective: 800px;
-  margin: 0;
-  padding: 0;
+  /* margin: 0; */
+  /* padding: 0; */
 }
 
 .days li .door {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  /* position: absolute; */
   width: 100%;
   height: 100%;
   display: flex;
@@ -69,7 +65,6 @@ body {
   transform-origin: left;
   transition: transform 0.8s ease;
   background: linear-gradient(145deg, #b30000, #ff0000);
-  border: 2px solid #d4af37;
   box-shadow: 0 5px 10px rgba(0,0,0,0.4);
 }
 
@@ -77,15 +72,15 @@ body {
   transform: rotateY(-150deg);
 }
 
-.days li::before {
+/* .days li::before {
   content: "";
-  position: absolute;
+  /* position: absolute;
   inset: 0;
   border-radius: 10px;
   background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
-}
+} */
 
 .days li:hover::before {
   opacity: 1;
@@ -93,7 +88,7 @@ body {
 
 .days li:hover {
   transform: translateY(-5px) scale(1.05);
-  background: linear-gradient(145deg, #ff4d4d, #b30000);
+  /* background: linear-gradient(145deg, #ff4d4d, #b30000); */
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
 }
 
@@ -117,21 +112,8 @@ body {
 }
 
 @keyframes fall {
-  0% {
-    transform: translateY(0) translateX(0) rotate(0deg);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(130vh) translateX(50px) rotate(360deg);
-    opacity: 0.3;
-  }
-}
-
-.snowflake:nth-child(odd) {
-  animation-duration: 15s;
-}
-.snowflake:nth-child(even) {
-  animation-duration: 18s;
+  0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0.9; }
+  100% { transform: translateY(130vh) translateX(50px) rotate(360deg); opacity: 0.3; }
 }
 
 @keyframes openBox {
@@ -139,6 +121,13 @@ body {
   50%  { transform: scale(1.2) rotate(10deg); opacity: 1; }
   70%  { transform: scale(0.9) rotate(-5deg); }
   100% { transform: scale(1) rotate(0deg); }
+}
+
+.snowflake:nth-child(odd) {
+  animation-duration: 15s;
+}
+.snowflake:nth-child(even) {
+  animation-duration: 18s;
 }
 
 .today-open {
