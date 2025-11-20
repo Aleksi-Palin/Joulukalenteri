@@ -57,6 +57,14 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
     });
 
     updateCookie(daysStatus);
+
+
+  const sound = new Audio("musiik.mp3");
+
+  function playSound() {
+    sound.play();
+  }
+
     
 }
 
