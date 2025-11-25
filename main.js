@@ -70,8 +70,9 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
 
 
 function daysUntil(date){
-    let target = new Date("2025-12-01");
+    
     const [day,month,year] = date.split('.');
+    let target = new Date(`${year}-12-01`);
     let today = new Date(`${year}-${month}-${day}`);
 
     let diffMill = target - today;
