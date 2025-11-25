@@ -173,8 +173,6 @@ function cantOpenDoor(){
 }
 
 function playAudio(){
-    let file = document.getElementById("myAudio");
-    const sound = new Audio("musiik.mp3");
 
 
     window.addEventListener("DOMContentLoaded", () => {
