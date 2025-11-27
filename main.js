@@ -57,6 +57,7 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
             } else {
                 // Mark as opened
                 daysStatus[liDay - 1].opened = 1;
+                SpawnDecoration(li);
                 li.classList.add("opened");
                 updateCookie(daysStatus);
                 console.log("Luukku avattiin ", getDaysStatus());
@@ -175,6 +176,35 @@ function cantOpenDoor(){
             overlay._timer = null;
         }, 250);
     }, 1200);
+}
+
+function SpawnDecoration(li){
+    let treats = [
+        "Media_Files/Treats/treat1.png",
+        "Media_Files/Treats/treat2.png",
+        "Media_Files/Treats/treat3.png",
+        "Media_Files/Treats/treat4.png",
+        "Media_Files/Treats/treat5.png",
+        "Media_Files/Treats/treat6.png",
+        "Media_Files/Treats/treat7.png",
+        "Media_Files/Treats/treat8.png",
+        "Media_Files/Treats/treat9.png",
+        "Media_Files/Treats/treat10.png"
+      
+    ]
+
+    let RandImg = treats[Math.floor(Math.random () * treats.length)]
+
+    let image = document.createElement("img");
+
+    image.src = RandImg;
+
+    image.style.cssText = [
+        "max-width: 60%;"
+    ]
+
+    li.appendChild(image);
+
 }
 
 function HighlightToday(li,day,liDay){
