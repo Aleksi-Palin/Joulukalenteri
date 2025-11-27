@@ -126,6 +126,58 @@ body {
   100% { transform: scale(1) rotate(0deg); }
 }
 
+@keyframes teemu-excited {
+  0% {opacity: 1;}
+  100%{opacity: 0;}
+}
+@keyframes teemu-mouthopen {
+  0% {opacity: 1;}
+  100%{opacity: 0;}
+}
+
+@keyframes teemu-satisfied {
+  0% {opacity: 1;}
+  100%{opacity: 0;}
+}
+
+@keyframes teemu-unhappy {
+  0% {opacity: 1;}
+  100%{opacity: 0;}
+}
+
+.teemu-excited {
+position: absolute;
+top: 25%;
+left: 1%;
+width: 20%;
+animation: teemu-excited 1s linear;
+
+}
+
+.teemu-mouthopen {
+position: absolute;
+top: 25%;
+left: 1%;
+width: 20%;
+animation: teemu-mouthopen 1s linear; 
+}
+
+.teemu-satisfied {
+position: absolute;
+top: 25%;
+left: 1%;
+width: 20%;
+animation: teemu-satisfied 1s linear; 
+}
+
+.teemu-unhappy {
+position: absolute;
+top: 25%;
+left: 1%;
+width: 20%;
+animation: teemu-unhappy 1s linear; ;
+}
+
 .snowflake:nth-child(odd) {
   animation-duration: 15s;
 }
@@ -151,7 +203,7 @@ body {
   transition: transform 0.8s ease;
   background: linear-gradient(145deg, #b30000, #ff0000);
   border: 2px solid #d4af37;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.4);
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .play-btn:hover {
