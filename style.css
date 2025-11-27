@@ -34,8 +34,8 @@ body {
 }
 
 .days li {
-  background: linear-gradient(145deg, #3b1717, #8b2020);
-  border: 2px solid #d4af37;
+  /* background: linear-gradient(145deg, #3b1717, #8b2020);
+  border: 2px solid #d4af37; */
   border-radius: 10px;
   font-size: 1.5rem;
   font-weight: bold;
@@ -95,13 +95,14 @@ body {
   box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
 }
 
-.days li:nth-child(24) {
+/* .days li:nth-child(24) {
   background: linear-gradient(145deg, #006600, #009900);
   animation: sparkle 2s infinite ease-in-out;
   border: 2px solid gold;
-}
+} */
 
 .snowflake {
+  
   position: fixed;
   top: -26px;
   pointer-events: none;
