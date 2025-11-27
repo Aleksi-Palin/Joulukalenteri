@@ -36,9 +36,13 @@ function checkDate(UserDate){ // To Check if current date matches with the wante
             daysStatus[liDay - 1].opened = 0;
         }
 
+        
+
         // Päivitä luokat aluksi
         li.classList.toggle("opened", daysStatus[liDay - 1].opened === 1);
         li.classList.toggle("locked", !(month === 12 && liDay <= day));
+
+        HighlightToday(li,day,liDay);
       
          // Poistetaan mahdollinen aiempi handler ja rekisteröidään uusi, säilyttäen viite elementissä
         if (li._handleClick) {
@@ -171,6 +175,27 @@ function cantOpenDoor(){
             overlay._timer = null;
         }, 250);
     }, 1200);
+}
+
+function HighlightToday(li,day,liDay){
+
+    if(liDay === day){
+        li.style.cssText = [
+        "background: linear-gradient(145deg, #006600, #009900)",
+        "animation: sparkle 2s infinite ease-in-out",
+        "border: 2px solid gold"
+        ].join(";");
+    }else{
+        li.style.cssText = [
+            "background: linear-gradient(145deg, #3b1717, #8b2020);",
+            "animation: none",
+            "border: 2px solid #d4af37"
+        ].join(";");
+  
+    }
+
+    
+    
 }
 
 function playAudio(){
