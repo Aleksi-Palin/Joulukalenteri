@@ -189,7 +189,22 @@ function SpawnDecoration(li){
         "Media_Files/Treats/treat7.png",
         "Media_Files/Treats/treat8.png",
         "Media_Files/Treats/treat9.png",
-        "Media_Files/Treats/treat10.png"
+        "Media_Files/Treats/treat10.png",
+        "Media_Files/Treats/treat11.png",
+        "Media_Files/Treats/treat12.png",
+        "Media_Files/Treats/treat13.png",
+        "Media_Files/Treats/treat14.png",
+        "Media_Files/Treats/treat15.png",
+        "Media_Files/Treats/treat16.png",
+        "Media_Files/Treats/treat17.png",
+        "Media_Files/Treats/treat18.png",
+        "Media_Files/Treats/treat19.png",
+        "Media_Files/Treats/treat20.png",
+        "Media_Files/Treats/treat21.png",
+        "Media_Files/Treats/treat22.png",
+        "Media_Files/Treats/treat23.png",
+        "Media_Files/Treats/treat24.png"
+        
       
     ]
 
